@@ -1,0 +1,67 @@
+.main-container section:first-child {
+    align-items: center;
+    padding: 12px;
+}
+
+.app-sidebar-toogle {
+    color:  #495584;
+    z-index: 1;
+    transition: padding-left .3s ease;
+    padding: 0 9px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-sidebar-toogle:hover {
+    color: #8fbd56;
+    cursor: pointer;
+}
+/*
+.app-sidebar-toogle::before {
+    transition: all .25s;
+    font-size: 21px;
+    font-family: feather;
+}
+.app-sidebar-toogle::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    bottom: 0;
+    border-radius: 50%;
+    right: 12px;
+    background: rgba(var(--primary-bg-color),0);
+}
+*/
+.navbar-success {
+    align-items: center!important;
+    display: flex;
+}
+.section-icon {
+    margin: 5px;
+    padding: 8px!important;
+    text-align: center;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    position: relative;
+    background: transparent;
+}
+/* .icon-spin {
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(359deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+  } */
