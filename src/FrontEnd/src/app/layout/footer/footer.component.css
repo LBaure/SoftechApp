@@ -1,0 +1,15 @@
+footer {
+  position: relative;
+  line-height: 24px;
+  line-height: 2.4rem;
+  flex: 1;
+  padding: 48px 25px;
+  z-index: 0;
+  font-weight: 300;
+}
+footer section {
+  display: block;
+  position: relative;
+  z-index: 0;
+  overflow: auto;
+}

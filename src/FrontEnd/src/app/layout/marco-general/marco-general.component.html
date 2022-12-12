@@ -1,0 +1,10 @@
+<body>
+  <app-nav-bar class="toolbar" [class.sideBar]="sideBar" (open)="onOpen($event)"></app-nav-bar>
+  <app-side-bar></app-side-bar>
+  <main [class.sideBar]="sideBar" id="main-wrapper">
+    <section>
+      <ng-content></ng-content>
+    </section>
+    <app-footer></app-footer>
+  </main>
+</body>

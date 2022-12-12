@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,20 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  iconToogle : string = "menu"
+  iconMenu: string = "menu"
+  @Output() open = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toogle () {
-    if (this.iconToogle === "menu") {
-      this.iconToogle = "menu_open"
+  toggle() {
+    if (this.iconMenu === "menu") {
+      this.iconMenu = "menu_open"
+      this.open.emit(1);
     } else {
-      this.iconToogle = "menu"
+      this.iconMenu = "menu"
+      this.open.emit(0);
     }
-
   }
-
 }
