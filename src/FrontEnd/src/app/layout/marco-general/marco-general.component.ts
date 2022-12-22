@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarcoGeneralComponent implements OnInit {
   sideBar : boolean = false;
+  isDark: boolean = false;
 
   constructor() { }
 
@@ -14,14 +15,21 @@ export class MarcoGeneralComponent implements OnInit {
   }
 
 
-  onOpen(e:any) {
-    var side = document.getElementById("side")
+  onOpen(e:any) {    
+    var side = document.getElementById("offcanvasExample")
     if(side?.classList.contains("show")) {
       side?.classList.remove("show")
       this.sideBar = false;
     } else {
       side?.classList.add("show")
       this.sideBar = true;
+    }
+  }
+  onDark(e:any) {
+    if (e === 1) {
+      this.isDark = true;
+    } else {
+      this.isDark = false;
     }
   }
 

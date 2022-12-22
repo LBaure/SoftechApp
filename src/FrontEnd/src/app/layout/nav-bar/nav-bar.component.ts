@@ -7,7 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   iconMenu: string = "menu"
+  iconMode: string = "bi bi-moon-stars"
   @Output() open = new EventEmitter();
+  @Output() dark = new EventEmitter();
 
   constructor() { }
 
@@ -21,6 +23,16 @@ export class NavBarComponent implements OnInit {
     } else {
       this.iconMenu = "menu"
       this.open.emit(0);
+    }
+  }
+
+  toggleIconDark() {
+    if (this.iconMode === "bi bi-moon-stars") {
+      this.iconMode = "bi bi-brightness-high"
+      this.dark.emit(1);
+    } else {
+      this.iconMode = "bi bi-moon-stars";
+      this.dark.emit(0);
     }
   }
 }

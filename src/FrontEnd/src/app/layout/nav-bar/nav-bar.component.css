@@ -1,26 +1,35 @@
-.toolbar-content {
+.section-login {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   display: flex;
-  left: 0;
-  right: 0;
   align-items: center;
-  padding: 20px;
-  position: absolute;
 }
-section .material-icons:first-child:hover {
-  color: #1976d2;
+
+.section-login li {
+  float: left;
+}
+
+.section-login li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+section .material-icons:hover, .section-login i:hover, .section-login .material-icons:hover{
+  color: var(--bs-primary);
   cursor: pointer;
 }
 
+.material-icons {
+  line-height: unset;
+}
 
-/* .settings-icon {
-  margin: 5px;
-  padding: 8px!important;
-} */
 .icon-spin {
-  margin: 12px;
-  color: rgb(204, 204, 204);
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
 }
 
 
@@ -32,8 +41,4 @@ section .material-icons:first-child:hover {
 @keyframes spin {
   100% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.navbar-section {
-  align-items: center;
 }

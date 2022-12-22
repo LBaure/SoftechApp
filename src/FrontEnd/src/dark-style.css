@@ -1,0 +1,49 @@
+:root {
+	--dark-border: rgba(255, 255, 255, .15);
+	--dark-body: #2c2f3e;
+	--dark-text: #fffd;
+}
+
+
+.dark-mode {
+	color: var(--dark-text) !important;
+	background-color: var(--dark-body) !important;
+}
+
+.dark-mode .border-bottom {
+	border: 1px solid var(--dark-border) !important;
+}
+
+.dark-mode .offcanvas {
+	background-color: var(--dark-body) !important;
+}
+
+.dark-mode .btn-toggle {
+	color: var(--dark-text);
+}
+
+.dark-mode .dark-text {
+	color: var(--dark-text) !important;
+}
+
+.dark-mode .text-muted {
+    color: #ffffff80!important;
+}
+
+.dark-mode .card {	
+	background-color: transparent !important;
+	border: 1px solid var(--dark-border)!important;
+	box-shadow: 0 4px 16px #0000001a;
+}
+.dark-mode .form-control {
+	background-color: transparent !important;
+	color: var(--dark-text);
+}
+.dark-mode input {
+	border: 1px solid var(--dark-border)!important;
+	transition: inherit;
+}
+
+.dark-mode button {
+	color: var(--dark-text);
+}

@@ -13,3 +13,13 @@ footer section {
   z-index: 0;
   overflow: auto;
 }
+
+.nav-browser {
+  justify-content: end;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-browser {
+    justify-content: center;
+  }  
+}
