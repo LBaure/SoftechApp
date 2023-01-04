@@ -1,7 +1,10 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div style="display: block;">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">SIRBIE</h5>
+      <div class="form-text">Sistema Interno de Registros de Bienes Inmuebles del Estado.</div>
+    </div>
+    <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
   </div>
   <div class="offcanvas-body">
     <ul class="list-unstyled ps-0">
@@ -19,17 +22,17 @@
         <div class="collapse border-list" [id]="'indice'+item.idOpcionMenu">
           <ul class="btn-toggle-nav list-unstyled pb-1 small" *ngFor="let sub of item.opciones">
             <li>
-              <a 
+              <a
                 class="dark-text"
-                *ngIf="!sub.opciones.length"  
-                [id]="sub.path" 
-                routerLinkActive="active" 
-                routerLink="{{ sub.url }}" 
+                *ngIf="!sub.opciones.length"
+                [id]="sub.path"
+                routerLinkActive="active"
+                routerLink="{{ sub.url }}"
               >{{sub.nombre}}</a>
             </li>
           </ul>
         </div>
       </li>
-    </ul>    
+    </ul>
   </div>
 </div>

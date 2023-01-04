@@ -1,21 +1,52 @@
 <div class="space-row">
-    <div class="card">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Buscár Catálogo">
-                        <button class="btn btn-primary text-white" type="button">Buscar</button>
-                    </div>                      
-                </div>
-                <div class="col-md-6">
-                    <button class="btn btn-primary d-flex ms-auto text-white" data-bs-toggle="modal" data-bs-target="#formulario">Nuevo Registro</button>
-                </div>
-            </div>
+  <div class="card overflow-hidden">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscár Catálogo">
+            <button class="btn btn-primary text-white" type="button">Buscar</button>
+          </div>
         </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-sm-block d-flex ms-auto text-white" data-bs-toggle="modal"
+            data-bs-target="#formulario">Nuevo Registro</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Lugar de Naciomiento</th>
+            <th scope="col">DPI</th>
+            <th scope="col">Estado Civil</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of conjuntoPersonas">
+            <td>{{persona.direccion}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.edad}}</td>
+            <td>{{persona.nacionalidad}}</td>
+            <td>{{persona.lugarNac}}</td>
+            <td>{{persona.estadoCivil}}</td>
+            <td>{{persona.dpi}}</td>
+            <td>{{persona.telefono}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
- <!-- Modal -->
-<div class="modal fade" id="formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <!-- Modal -->
+  <div class="modal fade" id="formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -60,7 +91,7 @@
               <label class="form-label">Teléfono</label>
               <input type="number" class="form-control" name="telefono">
             </div>
-            
+
           </form>
         </div>
         <div class="modal-footer">
@@ -70,33 +101,4 @@
       </div>
     </div>
   </div>
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Nacionalidad</th>
-                    <th scope="col">Lugar de Naciomiento</th>
-                    <th scope="col">DPI</th>
-                    <th scope="col">Estado Civil</th>
-                    <th scope="col">Telefono</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let persona of conjuntoPersonas">
-                    <td>{{persona.direccion}}</td>
-                    <td>{{persona.nombre}}</td>
-                    <td>{{persona.edad}}</td>
-                    <td>{{persona.nacionalidad}}</td>
-                    <td>{{persona.lugarNac}}</td>
-                    <td>{{persona.estadoCivil}}</td>
-                    <td>{{persona.dpi}}</td>
-                    <td>{{persona.telefono}}</td>
-                  </tr>
-                </tbody>
-            </table> 
-        </div>
-    </div>
 </div>

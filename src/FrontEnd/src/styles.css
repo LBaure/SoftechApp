@@ -23,15 +23,56 @@
 }
 
 .card {
+  margin-bottom: 1.5rem;
   border: none;
   box-shadow: 0 4px 16px #a9b8c826;
 }
 
 .card-header {
   background-color: transparent;
-  padding: 1.2rem 1.5rem!important;  
+  padding: 1.2rem 1.5rem!important;
 }
 
 .row {
   --bs-gutter-y: 0.75rem;
+}
+
+
+
+/* Diseño Tabla */
+/* .table th {
+  text-align: center;
+  padding: 20px;
+}
+.table td {
+  padding: 16px;
+  box-shadow: -5px 0px 5px -5px #0000001a;
+}
+.table > tbody > tr:hover > * {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: var(--bs-table-hover-color);
+}
+
+
+.table td:nth-child(1) {
+  border-left: 1px blue;
+} */
+/*
+
+.table-nowrap td, .table-nowrap th {
+  white-space: nowrap;
+} */
+
+
+.table th {
+  font-weight: 600;
+}
+
+.table>:not(caption)>*>* {
+  padding: 0.75rem 0.6rem;
+}
+
+
+.progress-sm {
+  height: 5px;
 }

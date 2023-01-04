@@ -22,6 +22,12 @@
 	color: var(--dark-text);
 }
 
+.dark-mode .btn-toggle::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e") !important;
+
+}
+
+
 .dark-mode .dark-text {
 	color: var(--dark-text) !important;
 }
@@ -30,7 +36,7 @@
     color: #ffffff80!important;
 }
 
-.dark-mode .card {	
+.dark-mode .card {
 	background-color: transparent !important;
 	border: 1px solid var(--dark-border)!important;
 	box-shadow: 0 4px 16px #0000001a;
@@ -46,4 +52,63 @@
 
 .dark-mode button {
 	color: var(--dark-text);
+}
+
+
+/*inputs*/
+.dark-mode input,
+.dark-mode textarea {
+  background-color: transparent;
+  color: var(--dark-text);
+}
+
+.dark-mode input[type="number"] {
+  color: red!important;
+}
+
+.dark-mode select {
+  background-color: transparent;
+  color: var(--dark-text);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  border: 1px solid var(--dark-border)!important;
+}
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+  color: var(--dark-text);
+  background-color: var(--dark-body);
+  border-color: var(--bs-primary);
+  outline: 0;
+}
+
+.dark-mode .modal-content {
+  background-color: var(--dark-body) !important;
+  border: 1px solid var(--dark-border)!important;
+  box-shadow: 0 4px 16px #0000001a;
+}
+
+.dark-mode .modal-header {
+  border-bottom: 1px solid var(--dark-border)!important;
+}
+.dark-mode .modal-footer {
+  border-top: 1px solid var(--dark-border)!important;
+}
+
+
+
+/* tablas */
+.dark-mode .table {
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .table {
+  border-spacing: 0 ;
+  border-collapse: collapse;
+}
+.dark-mode .table th,
+.dark-mode .table td {
+  border: 1px solid var(--dark-border);
 }

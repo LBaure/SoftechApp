@@ -1,0 +1,10 @@
+
+@media screen and (max-width: 600px) {
+  .btn-sm-block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
