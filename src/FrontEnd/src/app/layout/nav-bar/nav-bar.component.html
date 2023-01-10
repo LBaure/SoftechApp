@@ -1,7 +1,50 @@
 <div class="container-fluid">
-  <section class="d-flex align-items-center">
-    <span class="material-icons" (click)="toggle()">{{ iconMenu }}</span>
-    <div class="d-flex ms-auto">
+  <section class="navbar-header">
+    <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" (click)="toggle()">
+      <span class="material-icons">{{ iconMenu }}</span>
+    </button>
+
+    <div class="d-flex align-items-center">
+      <div class="header-item">
+        <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" (click)="toggleIconDark()">
+          <i [class]="iconMode" ></i>
+        </button>
+
+      </div>
+      <div class="header-item">
+        <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+          <span class="material-icons icon-spin">settings</span>
+        </button>
+      </div>
+      <div class="header-item">
+        <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+          <span class="material-icons">account_circle</span>
+        </button>
+      </div>
+
+
+      <div class="dropdown header-item topbar-user">
+        <button type="button" class="btn btn-user" data-bs-toggle="dropdown">
+          <span class="d-flex align-items-center">
+            <!-- <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar"> -->
+            <span class="text-start ms-xl-2">
+                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{user.name}}</span>
+                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{user.nit}}</span>
+            </span>
+          </span>
+        </button>
+        <div class="dropdown-menu">
+          <h6 class="dropdown-header">Bienvenido {{  name }}</h6>
+          <a class="dropdown-item" ><i class="bi bi-person-circle text-muted fs-16 align-middle me-2"></i> <span class="align-middle">Perfil</span></a>
+          <a class="dropdown-item" (click)="logout()"><i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-2"></i> <span class="align-middle">Cerrar sesión</span></a>
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <!-- <div class="d-flex ms-auto">
       <ul class="section-login">
         <li>
           <a (click)="toggleIconDark()">
@@ -9,12 +52,22 @@
           </a>
         </li>
         <li>
-          <a><span>Luis Bautista</span></a>
+          <div class="dropdown">
+            <a class="dropdown-toggle" data-bs-toggle="dropdown" >
+              <h6>{{user.name}}</h6>
+              <span>{{user.nit}}</span>
+            </a>
+            <div class="dropdown-menu">
+              <h6 class="dropdown-header">Bienvenido {{name}}</h6>
+              <a class="dropdown-item" ><i class="bi bi-person-circle text-muted fs-16 align-middle me-2"></i> <span class="align-middle">Perfil</span></a>
+              <a class="dropdown-item" (click)="logout()"><i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-2"></i> <span class="align-middle">Cerrar sesión</span></a>
+            </div>
+          </div>
         </li>
         <li><a>
           <span class="material-icons icon-spin">settings</span>
         </a></li>
-      </ul>      
-    </div>
+      </ul>
+    </div> -->
   </section>
 </div>

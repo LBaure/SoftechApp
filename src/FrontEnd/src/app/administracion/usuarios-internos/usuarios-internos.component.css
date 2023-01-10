@@ -1,0 +1,43 @@
+
+/* Diseño Tabla */
+/* .table-core th {
+  text-align: center;
+  padding: 20px;
+  border-collapse:separate;
+                border-spacing:0 15px;
+}
+.table-core td {
+  padding: 16px;
+  box-shadow: -5px 0px 5px -5px #0000001a;
+}
+.table-core > tbody > tr:hover > * {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: var(--bs-table-hover-color);
+}
+
+
+.table-core td:nth-child(1) {
+  border-left: 1px blue;
+}
+
+.table-core-nowrap td, .table-nowrap th {
+  white-space: nowrap;
+} */
+
+
+.table-core {
+  border-collapse:separate;
+  border-spacing: 2px 2px;
+}
+.table-core td {
+  background-color:#f7f8f9;
+  border: none;
+}
+.table-core th {
+  background-color: transparent;
+}
+.table-core td:nth-child(1) {
+  /* border-left: 5px solid #4188e1; */
+  border-left: 5px solid var(--bs-primary)
+}
+

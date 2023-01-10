@@ -11,13 +11,15 @@ export class UsuariosInternosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("ngOnInit(): void ");
+
   }
 
   verAlerta () {
     Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',
-      icon: 'info', 
-      iconColor: "var(--bs-primary)", 
+      icon: 'info',
+      iconColor: "var(--bs-primary)",
       html:
         'You can use <b>bold text</b>, ' +
         '<a href="//sweetalert2.github.io">links</a> ' +

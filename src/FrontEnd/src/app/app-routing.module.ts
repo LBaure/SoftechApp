@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RedirectComponent } from './layout/redirect/redirect.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: DashboardComponent
+  },
+  {
+      path: 'login',
+      component: RedirectComponent,
+      resolve: { url: 'externalUrlRedirectResolver' },
+      data: { externalUrl: environment.ssoLogin }
   },
   {
     path: 'administracion',

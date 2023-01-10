@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -15,11 +15,20 @@
   padding: 12px;
 }
 
+.fs-12 {
+  font-size: 12px;
+}
 .fs-13 {
   font-size: 13px;
 }
-.fs-12 {
-  font-size: 12px;
+.fs-14 {
+  font-size: 14px;
+}
+.fs-15 {
+  font-size: 15px;
+}
+.fs-16 {
+  font-size: 16px;
 }
 
 .card {
@@ -37,7 +46,10 @@
   --bs-gutter-y: 0.75rem;
 }
 
-
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Diseño Tabla */
 /* .table th {
@@ -75,4 +87,24 @@
 
 .progress-sm {
   height: 5px;
+}
+
+
+
+
+.btn-icon-split {
+  padding: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.btn-icon-split .icon {
+  background: rgba(0,0,0,.15);
+  display: inline-block;
+  padding: 0.35rem .5rem;
+}
+.btn-icon-split .text {
+  display: inline-block;
+  padding: 0.35rem .5rem;
 }

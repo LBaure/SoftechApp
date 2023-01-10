@@ -72,3 +72,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+.offcanvas-header .head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.head .material-icons {
+  font-size: 1.25rem;
+}
+.head .material-icons:hover {
+  font-size: 1.5rem;
+  transition: font-size 0.05s ease-in 0.05s;
+  color: var(--bs-primary);
+  cursor: pointer;
+}

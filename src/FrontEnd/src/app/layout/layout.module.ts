@@ -5,6 +5,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { MarcoGeneralComponent } from './marco-general/marco-general.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdministracionRoutingModule } from '../administracion/administracion-routing.module';
+import { RedirectComponent } from './redirect/redirect.component';
 
 
 
@@ -13,7 +14,8 @@ import { AdministracionRoutingModule } from '../administracion/administracion-ro
     NavBarComponent,
     SideBarComponent,
     MarcoGeneralComponent,
-    FooterComponent
+    FooterComponent,
+    RedirectComponent
   ],
   imports: [
     CommonModule,

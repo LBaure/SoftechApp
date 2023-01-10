@@ -16,7 +16,7 @@ body {
 }
 
 section {
-  padding-top: 60px;
+  padding-top: 70px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -32,8 +32,9 @@ app-footer {
 }
 
 
-/* @media screen and (max-width: 600px) {
-  #main-wrapper {
-    display: none;
+@media screen and (max-width: 991px) {
+  .sideBar {
+    margin-left: 0;
+    transition: all ease .3s;
   }
-} */
+}
