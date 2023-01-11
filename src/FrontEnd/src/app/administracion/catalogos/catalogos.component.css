@@ -5,7 +5,6 @@
   box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
   border-bottom: 1px solid none;
   border-top: 1px solid none;
-  /* margin: -23px -1.5rem 1.5rem -1.5rem; */
 }
 .page-title-box h4 {
   font-weight: 700;
@@ -34,7 +33,6 @@
   background-color: transparent;
 }
 .table-core td:nth-child(1) {
-  /* border-left: 5px solid #4188e1; */
   border-left: 5px solid var(--bs-primary)
 }
 
@@ -79,4 +77,72 @@
   color: #3577f1;
   background: rgba(53, 119, 241, 0.1);
   border-color: transparent;
+}
+
+
+.decoration-none {
+  color: initial;
+  text-decoration: none;
+}
+
+
+.dropdown-menu {
+  -webkit-box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+  box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+  -webkit-animation-name: DropDownSlide;
+  animation-name: DropDownSlide;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  z-index: 1000;
+  border-radius: 0;
+  border-color: none;
+  border: none;
+}
+
+
+.v-btn--example {
+  bottom: 0;
+  position: absolute;
+  margin: 0 0 16px 16px;
+  right: 0;
+}
+
+
+
+.btn-fixed {
+  position: fixed;
+}
+.btn-fixed.btn-right {
+  right: 16px;
+}
+
+.btn-fixed.btn-bottom {
+  bottom: 16px;
+}
+
+.btn-rounded {
+  border-radius: 50%;
+}
+
+.btn-fab {
+  height: 64px;
+  width: 64px;
+  box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+  z-index: 6;
+  margin-bottom: 0px;
+  transform-origin: center center;
+  font-size: 0px;
+}
+.btn-fab,
+.btn-icon {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.btn-fab span {
+  font-size: 38px;
 }

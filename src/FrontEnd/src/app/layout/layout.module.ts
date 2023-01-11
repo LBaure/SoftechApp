@@ -6,6 +6,7 @@ import { MarcoGeneralComponent } from './marco-general/marco-general.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdministracionRoutingModule } from '../administracion/administracion-routing.module';
 import { RedirectComponent } from './redirect/redirect.component';
+import { MediaQueryComponent } from './media-query/media-query.component';
 
 
 
@@ -15,7 +16,8 @@ import { RedirectComponent } from './redirect/redirect.component';
     SideBarComponent,
     MarcoGeneralComponent,
     FooterComponent,
-    RedirectComponent
+    RedirectComponent,
+    MediaQueryComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { RedirectComponent } from './redirect/redirect.component';
   exports: [
     NavBarComponent,
     SideBarComponent,
-    MarcoGeneralComponent
+    MarcoGeneralComponent,
+    MediaQueryComponent
   ]
 })
 export class LayoutModule { }

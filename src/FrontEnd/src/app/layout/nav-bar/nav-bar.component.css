@@ -45,13 +45,7 @@
   display: block;
 } */
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-  position: absolute;
-  inset: 0px auto auto 0px;
-  margin: 0px;
-  transform: translate(0px, 65px);
-}
+
 
 
 .navbar-header {
@@ -136,5 +130,14 @@
 @media (min-width: 768px) {
   .topbar-user {
       background-color: #f7f8f9
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(0px, 65px);
+    width: -webkit-fill-available;
   }
 }

@@ -1,73 +1,142 @@
-<div class="row">
+<div>
   <div class="col-12">
-      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-          <h4 class="mb-sm-0">Administración de Cátalogos</h4>
-          <div class="page-title-right">
-              <ol class="breadcrumb m-0">
-                  <li class="breadcrumb-item"><a href="javascript: void(0);">Catalogos</a></li>
-                  <li class="breadcrumb-item">NFT Dashboard</li>
-              </ol>
-          </div>
-
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+      <h4 class="mb-sm-0">Administración de Cátalogos</h4>
+      <div>
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="javascript: void(0);">Catalogos</a></li>
+          <li class="breadcrumb-item">NFT Dashboard</li>
+        </ol>
       </div>
+    </div>
   </div>
-</div>
-<div class="space-row">
-  <div class="card overflow-hidden">
-    <div class="card-header">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscár Catálogo">
-            <button class="btn btn-primary text-white" type="button">Buscar</button>
+  <div class="space-row">
+    <div class="card overflow-hidden">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Buscár Catálogo">
+              <button class="btn btn-primary text-white" type="button">Buscar</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <button
+              *ngIf="!(mq === 'sm' || mq === 'xs')"
+              class="btn btn-primary btn-icon-split text-white btn-sm-block d-flex ms-auto"
+            >
+              <span class="icon text-white-50">
+                <i class="bi bi-save"></i>
+              </span>
+              <span class="text">Nuevo</span>
+            </button>
+  <!--
+            <button class="btn btn-primary btn-sm-block d-flex ms-auto text-white" data-bs-toggle="modal"
+              data-bs-target="#formulario">Nuevo Registro</button> -->
           </div>
         </div>
-        <div class="col-md-6">
+      </div>
+      <div *ngIf="(mq === 'sm' || mq === 'xs'); else viewDesktop" class="mb-4">
+        <div class="list-group list-group-minfin w-auto">
+          <label class="list-group-item d-flex gap-3" style="align-items: center;"  *ngFor="let item of itemsCatalogos | paginate : { id: 'paginacionCatalogoGeneral', itemsPerPage: 10, currentPage: page }">
+            <span class="pt-1 form-checked-content">
+              <strong>{{ item.nombre }}</strong>
+              <small class="d-block text-muted">
+                {{ item.descripcion }}
+              </small>
+              <small class="d-block text-muted">
+                <span *ngIf="item.tipoCatalogo === 1, else noEditableMobile" class="badge rounded-pill text-bg-primary text-white">{{ item.tipoCatalogoTexto }}</span>
 
-          <button
-            class="btn btn-primary btn-icon-split text-white btn-sm-block d-flex ms-auto"
-          >
-            <span class="icon text-white-50">
-              <i class="bi bi-save"></i>
+                <ng-template #noEditableMobile>
+                  <span class="badge rounded-pill text-bg-danger">{{ item.tipoCatalogoTexto }}</span>
+                </ng-template>
+              </small>
+
+              <!-- <span class="pt-1 form-checked-content">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                  <strong>{{ item.nombre }}</strong>
+                  <small class="opacity-50 text-nowrap ">editable</small>
+                </div>
+                <small class="d-block text-muted">
+                  {{ item.descripcion }}
+                </small>
+              </span> -->
             </span>
-            <span class="text">Guardar</span>
-          </button>
-<!--
-          <button class="btn btn-primary btn-sm-block d-flex ms-auto text-white" data-bs-toggle="modal"
-            data-bs-target="#formulario">Nuevo Registro</button> -->
+            <div class="dropdown ms-auto">
+              <a href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="true"
+                class="text-decoration-none link-dark">
+                <i class="bi bi-three-dots-vertical"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1"
+                style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-15px, 23px);"
+                data-popper-placement="bottom-end">
+                <li>
+                  <a class="dropdown-item d-flex gap-3" href="#">
+                    <span class="material-icons">edit</span>
+                    <span>Editar</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex gap-3" href="#">
+                    <span class="material-icons">delete</span>
+                    <span>Eliminar</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </label>
         </div>
+        <button type="button" class="btn btn-primary btn-rounded btn-fab btn-fixed btn-right btn-bottom text-white">
+          <span class="material-icons">add</span>
+        </button>
+      </div>
+      <ng-template #viewDesktop>
+        <div class="card-body">
+          <table class="table table-core">
+            <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Catálogo</th>
+                  <th>Descripción</th>
+                  <th>Tipo Catálogo</th>
+                  <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of itemsCatalogos | paginate : { id: 'paginacionCatalogoGeneral', itemsPerPage: 10, currentPage: page }">
+                <td>{{ item.idCatalogo }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td align="center">
+                  <span *ngIf="item.tipoCatalogo === 1; else noEditableSpan" class="badge rounded-pill text-bg-primary text-white">{{ item.tipoCatalogoTexto }}</span>
+                  <ng-template #noEditableSpan>
+                    <span  class="badge rounded-pill text-bg-danger">{{ item.tipoCatalogoTexto }}</span>
+                  </ng-template>
+                </td>
+                <!-- <td></td> -->
+                <td align="center">
+                  <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" style="color: var(--bs-success);">
+                    <span class="material-icons">edit</span>
+                  </button>
+                  <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" style="color: var(--bs-danger);">
+                    <span class="material-icons">delete</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+      <div style="text-align: center">
+        <pagination-controls
+            id="paginacionCatalogoGeneral"
+            class="my-pagination"
+            (pageChange)="page = $event"
+            previousLabel=""
+            nextLabel=""
+        ></pagination-controls>
       </div>
     </div>
-    <div class="card-body">
-      <table class="table table-core">
-        <thead>
-          <tr>
-              <th>ID</th>
-              <th>Catálogo</th>
-              <th>Descripción</th>
-              <th>Tipo Catálogo</th>
-              <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of itemsCatalogos">
-            <td>{{ item.idCatalogo }}</td>
-            <td>{{ item.nombre }}</td>
-            <td>{{ item.descripcion }}</td>
-            <td>{{ item.tipoCatalogoTexto }}</td>
-            <td align="center">
-              <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" style="color: var(--bs-success);">
-                <span class="material-icons">edit</span>
-              </button>
-              <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" style="color: var(--bs-danger);">
-                <span class="material-icons">delete</span>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
-
-
 </div>
