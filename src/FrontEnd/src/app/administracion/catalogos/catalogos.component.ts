@@ -21,8 +21,6 @@ export class CatalogosComponent implements OnInit {
     private resizeService: ResizeService,
   ) {
     this.resizeService.onResize$.subscribe(x => {
-      console.log("devuelve xxxxxxxxxxxxxxx", x);
-
       this.mq = x;
     });
 
@@ -31,8 +29,6 @@ export class CatalogosComponent implements OnInit {
   ngOnInit(): void {
     console.log("conjuntoPersonas", this.itemsCatalogos);
     console.log("mq", this.mq);
-
-
     this.obtenerCatalogos();
   }
 

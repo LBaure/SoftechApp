@@ -16,6 +16,8 @@ export class MarcoGeneralComponent implements OnInit {
 
 
   onOpen(e:any) {
+    console.log("e", e);
+
     var side = document.getElementById("offcanvasExample")
     if(side?.classList.contains("show")) {
       side?.classList.remove("show")

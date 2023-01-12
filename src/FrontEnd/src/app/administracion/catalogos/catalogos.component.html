@@ -14,30 +14,24 @@
     <div class="card overflow-hidden">
       <div class="card-header">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Buscár Catálogo">
               <button class="btn btn-primary text-white" type="button">Buscar</button>
             </div>
           </div>
-          <div class="col-md-6">
-
+          <div *ngIf="!(mq === 'sm' || mq === 'md')" class="col-lg-6">
             <button
-              *ngIf="!(mq === 'sm' || mq === 'xs')"
-              class="btn btn-primary btn-icon-split text-white btn-sm-block d-flex ms-auto"
+              class="btn btn-info btn-sm-block d-flex ms-auto text-white"
+              data-bs-toggle="modal"
+              data-bs-target="#formulario"
             >
-              <span class="icon text-white-50">
-                <i class="bi bi-save"></i>
-              </span>
-              <span class="text">Nuevo</span>
+              Agregar Registro
             </button>
-  <!--
-            <button class="btn btn-primary btn-sm-block d-flex ms-auto text-white" data-bs-toggle="modal"
-              data-bs-target="#formulario">Nuevo Registro</button> -->
           </div>
         </div>
       </div>
-      <div *ngIf="(mq === 'sm' || mq === 'xs'); else viewDesktop" class="mb-4">
+      <div *ngIf="(mq === 'sm' || mq === 'md'); else viewDesktop" class="mb-4">
         <div class="list-group list-group-minfin w-auto">
           <label class="list-group-item d-flex gap-3" style="align-items: center;"  *ngFor="let item of itemsCatalogos | paginate : { id: 'paginacionCatalogoGeneral', itemsPerPage: 10, currentPage: page }">
             <span class="pt-1 form-checked-content">
@@ -69,7 +63,6 @@
                 <i class="bi bi-three-dots-vertical"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1"
-                style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-15px, 23px);"
                 data-popper-placement="bottom-end">
                 <li>
                   <a class="dropdown-item d-flex gap-3" href="#">
@@ -106,14 +99,15 @@
             <tbody>
               <tr *ngFor="let item of itemsCatalogos | paginate : { id: 'paginacionCatalogoGeneral', itemsPerPage: 10, currentPage: page }">
                 <td>{{ item.idCatalogo }}</td>
-                <td>{{ item.nombre }}</td>
+                <td >{{ item.nombre }}</td>
                 <td>{{ item.descripcion }}</td>
-                <td align="center">
+                <td class="text-white bg-info text-uppercase fw-semibold" [class.bg-danger]="item.tipoCatalogo === 0" align="center">{{ item.tipoCatalogoTexto }}</td>
+                <!-- <td align="center">
                   <span *ngIf="item.tipoCatalogo === 1; else noEditableSpan" class="badge rounded-pill text-bg-primary text-white">{{ item.tipoCatalogoTexto }}</span>
                   <ng-template #noEditableSpan>
                     <span  class="badge rounded-pill text-bg-danger">{{ item.tipoCatalogoTexto }}</span>
                   </ng-template>
-                </td>
+                </td> -->
                 <!-- <td></td> -->
                 <td align="center">
                   <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" style="color: var(--bs-success);">

@@ -1,17 +1,3 @@
-.page-title-box {
-  padding: 10px 1.5rem;
-  background-color: #fff;
-  -webkit-box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
-  box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
-  border-bottom: 1px solid none;
-  border-top: 1px solid none;
-}
-.page-title-box h4 {
-  font-weight: 700;
-  font-size: 15px!important;
-  text-transform: uppercase;
-}
-
 @media screen and (max-width: 600px) {
   .btn-sm-block {
     width: 100%;
@@ -24,16 +10,24 @@
 .table-core {
   border-collapse:separate;
   border-spacing: 4px;
+  /* font-size: 1.125rem; */
 }
 .table-core td {
-  background-color:#f7f8f9;
+  background-color:#f5f6f8;
+  /* #f5f6f8; */
+  /* #f6f6f8; */
   border: none;
 }
 .table-core th {
   background-color: transparent;
+  padding-bottom: 2px;
 }
-.table-core td:nth-child(1) {
+.table-core tbody td:nth-child(1) {
   border-left: 5px solid var(--bs-primary)
+}
+
+.table-core td .primary {
+  background-color: var(--bs-primary) !important;
 }
 
 

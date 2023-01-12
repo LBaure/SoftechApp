@@ -49,10 +49,10 @@
 	color: var(--dark-text);
 }
 
-.dark-mode .btn-toggle::before {
+/* .dark-mode .btn-toggle::before {
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e") !important;
 
-}
+} */
 
 
 .dark-mode .dark-text {
@@ -130,7 +130,8 @@
 
 
 
-/* tablas */
+/******************************************************************* TABLAS *******************************************************************
+***********************************************************************************************************************************************/
 .dark-mode .table {
   color: var(--dark-text) !important;
 }
@@ -144,6 +145,23 @@
   border: 1px solid var(--dark-border);
 }
 
+.dark-mode .table-core {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+.dark-mode .table-core td {
+  background-color:transparent !important;
+  border: 1px solid var(--dark-border) !important;
+}
+.dark-mode .table-core th {
+  background-color: transparent !important;
+  border: 1px solid var(--dark-border) !important;
+  padding: 0.75rem 0.6rem !important;
+}
+
+/***********************************************************************************************************************************************
+******************************************************************* DROPDOWN *******************************************************************/
 
 
 .dark-mode .dropdown-menu {
@@ -166,22 +184,13 @@
 }
 
 
+/***********************************************************************************************************************************************
+******************************************************************* CARD *******************************************************************/
 
-.dark-mode .table-core {
-
-  border-collapse: collapse !important;
-  border-spacing: 0 !important;
+.dark-mode .card-header {
+	border-bottom: 1px solid var(--dark-border) ;
 }
 
-.dark-mode .table-core td {
-  background-color:transparent !important;
-  border: 1px solid var(--dark-border) !important;
-}
-.dark-mode .table-core th {
-  background-color: transparent !important;
-  color: var(--dark-text) !important;
-  border: 1px solid var(--dark-border) !important;
-}
 
 /* .dark-mode .table-core td:nth-child(1) {
   border-left: 2px solid var(--bs-primary) !important;

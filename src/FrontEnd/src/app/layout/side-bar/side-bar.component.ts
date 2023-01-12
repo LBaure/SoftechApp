@@ -392,6 +392,20 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menu = this.auth.getMenu();
+    let iteracion = 0;
+    this.menu.forEach(element => {
+      if (!element.idOpcionPadre) {
+        iteracion ++;
+        element.icon = "admin_panel_settings"
+        if (iteracion > 1) {
+          element.icon = "maps_home_work"
+        }
+        if (iteracion > 2) {
+          element.icon = "tune"
+        }
+      }
+
+    });
     console.log("this.menu", this.menu);
 
   }

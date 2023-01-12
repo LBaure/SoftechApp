@@ -1,32 +1,41 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, OnInit, Component, HostListener } from '@angular/core';
 import { ResizeService } from './resize.service';
 
 @Component({
   selector: 'app-media-query',
   templateUrl: './media-query.component.html'
 })
-export class MediaQueryComponent implements  AfterViewInit {
+export class MediaQueryComponent implements  OnInit {
 
   constructor(private resizeSvc: ResizeService) { }
   @HostListener("window:resize", [])
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.getScreenSize();
   }
+  // ngAfterViewInit(): void {
+  //   this.getScreenSize();
+  // }
 
   private getScreenSize () {
     let mediaQuery:string = '';
 
+    // sc = size screen
     var sc = window.innerWidth;
-    if (sc < 450){
-      mediaQuery = 'xs'
-    } else if (sc > 451 && sc < 920 ) {
+    console.log("cs", sc);
+
+    if (sc < 576){
       mediaQuery = 'sm'
-    } else if (sc > 921 && sc < 1250) {
+    } else if (sc > 576 && sc < 992 ) {
       mediaQuery = 'md'
-    } else {
+    } else if (sc > 992 && sc < 1200) {
       mediaQuery = 'lg'
+    } else {
+      mediaQuery = 'xl'
     }
+
+    console.log("mediaQuery", mediaQuery);
+
     this.resizeSvc.onResize(mediaQuery);
   }
 

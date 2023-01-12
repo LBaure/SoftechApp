@@ -1,8 +1,15 @@
 <div class="container-fluid">
   <section class="navbar-header">
-    <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" (click)="toggle()">
-      <span class="material-icons">{{ iconMenu }}</span>
-    </button>
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" (click)="toggle()">
+        <span class="material-icons">{{ iconMenu }}</span>
+      </button>
+      <div *ngIf="iconMenu === 'menu'">
+        <h5 class="offcanvas-title" >SIRBIE</h5>
+        <div class="form-text">Sistema Interno de Registros de Bienes Inmuebles del Estado.</div>
+
+      </div>
+    </div>
 
     <div class="d-flex align-items-center">
       <div class="header-item">
