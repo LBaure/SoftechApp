@@ -127,6 +127,25 @@
   top: 6px!important;
 }
 
+.system-title h5 {
+  line-height: 0.8;
+  margin-bottom: auto;
+}
+
+.system-title {
+  visibility: visible;
+  transition: all 0.4s ease-in;
+}
+
+.system-title-d-none {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out
+}
+
+
+
+
 @media (min-width: 768px) {
   .topbar-user {
       background-color: #f7f8f9

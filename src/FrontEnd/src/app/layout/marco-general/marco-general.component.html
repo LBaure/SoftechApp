@@ -6,6 +6,7 @@
     [ngClass]="isDark ? 'dark-mode' : ''"
     (open)="onOpen($event)"
     (dark)="onDark($event)"
+    [iconMenu]="iconNavBar"
   ></app-nav-bar>
   <app-side-bar (closeSide)="onOpen($event)"></app-side-bar>
   <main [class.sideBar]="sideBar" id="main-wrapper">

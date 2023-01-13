@@ -4,10 +4,9 @@
       <button class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" (click)="toggle()">
         <span class="material-icons">{{ iconMenu }}</span>
       </button>
-      <div *ngIf="iconMenu === 'menu'">
-        <h5 class="offcanvas-title" >SIRBIE</h5>
+      <div class="d-none d-xl-inline-block system-title" [class.system-title-d-none]="iconMenu != 'menu'">
+        <h5>SIRBIE</h5>
         <div class="form-text">Sistema Interno de Registros de Bienes Inmuebles del Estado.</div>
-
       </div>
     </div>
 

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class MarcoGeneralComponent implements OnInit {
   sideBar : boolean = false;
   isDark: boolean = false;
+  iconNavBar = "menu"
+  
 
   constructor() { }
 
@@ -17,8 +19,12 @@ export class MarcoGeneralComponent implements OnInit {
 
   onOpen(e:any) {
     console.log("e", e);
-
-    var side = document.getElementById("offcanvasExample")
+    if (e === 1) {
+      this.iconNavBar = 'menu_open'
+    } else {
+      this.iconNavBar = 'menu'
+    }  
+    var side = document.getElementById("offcanvasExample")    
     if(side?.classList.contains("show")) {
       side?.classList.remove("show")
       this.sideBar = false;

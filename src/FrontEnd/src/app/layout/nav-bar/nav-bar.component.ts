@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/utils/auth.service';
 
@@ -9,12 +9,13 @@ import { AuthService } from 'src/app/utils/auth.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  iconMenu: string = "menu"
   iconMode: string = "bi bi-moon-stars"
   user: any;
   name:string = "";
+  showTitle : boolean = false;
   @Output() open = new EventEmitter();
   @Output() dark = new EventEmitter();
+  @Input() iconMenu: string = 'menu';
 
   constructor(
     private http: HttpClient,
@@ -22,6 +23,10 @@ export class NavBarComponent implements OnInit {
     private auth: AuthService
   ) {
     this.user = auth.getUser();
+    // this.user = {
+    //   name: "Luis Baure",
+    //   nit: '63397323'
+    // }
   }
 
   ngOnInit(): void {
@@ -29,18 +34,12 @@ export class NavBarComponent implements OnInit {
       var userArr = this.user.name.split(" ")
       this.name = userArr[0];
     }
-    console.log("user", this.user);
-
   }
 
   toggle() {
-    console.log("toggle");
-
     if (this.iconMenu === "menu") {
-      this.iconMenu = "menu_open"
       this.open.emit(1);
     } else {
-      this.iconMenu = "menu"
       this.open.emit(0);
     }
   }
@@ -56,8 +55,6 @@ export class NavBarComponent implements OnInit {
   }
 
   logout() {
-    console.log("loggout");
-
     this.http.get('/api/sso/logout').subscribe(
       success => {
         this.router.navigate(['login']);
